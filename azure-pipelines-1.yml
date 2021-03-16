@@ -25,3 +25,10 @@ stages:
       inputs:
         command: login
         containerRegistry: dockerRegistryServiceConnection
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: buildAndPush
+        dockerFile: '$(Build.SourcesDirectory)/app/Dockerfile'
+        tags: |
+          ${tag}
