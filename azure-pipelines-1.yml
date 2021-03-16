@@ -25,5 +25,6 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
