@@ -36,6 +36,4 @@ stages:
       displayName: Check image has published
       inputs:
         azureSubscription: 'Visual Studio Enterprise (9e4ebf69-d70b-48bd-bb7e-0545daea4a64)'
-        scriptType: 'ps'
-        scriptLocation: 'inlineScript'
-        inlineScript: 'az acr run --registry davejContainerRegistry45 --cmd ''$Registry/flowable:V1'' /dev/null'
+        inline: 'az acr run --registry davejContainerRegistry45 --cmd ''$Registry/flowable:V1'' /dev/null'
