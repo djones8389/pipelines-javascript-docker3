@@ -33,7 +33,7 @@ stages:
         repository:  Flowable
         tags: V1
     - task: AzureCLI@2
-      displayName: Test image
+      displayName: Check image has published
       inputs:
         azureSubscription: 'Visual Studio Enterprise (9e4ebf69-d70b-48bd-bb7e-0545daea4a64)'
         scriptType: 'ps'
