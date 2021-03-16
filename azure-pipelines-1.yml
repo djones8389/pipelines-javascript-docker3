@@ -32,4 +32,10 @@ stages:
         dockerFile: '$(Build.SourcesDirectory)/app/Dockerfile'
         repository:  Flowable
         tags: V1
-        
+    - task: AzureCLI@2
+      displayName: Test image
+      inputs:
+        azureSubscription: 'Visual Studio Enterprise (9e4ebf69-d70b-48bd-bb7e-0545daea4a64)'
+        scriptType: 'ps'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az acr run --registry davejContainerRegistry45 --cmd ''$Registry/flowable:V1'' /dev/null'
