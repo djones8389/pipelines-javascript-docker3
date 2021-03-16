@@ -28,12 +28,8 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: buildAndPush
+        command: push
         dockerFile: '$(Build.SourcesDirectory)/app/Dockerfile'
         repository:  Flowable
         tags: V1
-    - task: AzurePowerShell@5
-      displayName: Check image has published
-      inputs:
-        azureSubscription: 'Visual Studio Enterprise (9e4ebf69-d70b-48bd-bb7e-0545daea4a64)'
-        inline: 'az acr run --registry davejContainerRegistry45 --cmd ''$Registry/flowable:V1'' /dev/null'
+  
