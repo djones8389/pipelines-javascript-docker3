@@ -31,5 +31,3 @@ stages:
         command: buildAndPush
         dockerFile: '$(Build.SourcesDirectory)/app/Dockerfile'
         repository:  FlowableV1
-        tags: |
-          ${tag}
